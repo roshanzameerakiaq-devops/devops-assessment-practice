@@ -27,8 +27,7 @@ class TaskManagerHandler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
 
-server = HTTPServer(("0.0.0.0", 8000), TaskManagerHandler)
-
-print("Task Manager running on port 8000", flush=True)
-
-server.serve_forever()
+if __name__ == "__main__":
+    server = HTTPServer(("0.0.0.0", 8000), TaskManagerHandler)
+    print("Task Manager running on port 8000", flush=True)
+    server.serve_forever()

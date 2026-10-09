@@ -12,9 +12,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Checking application files'
-                sh 'test -f app.py'
-                sh 'python3 --version'
+                echo 'Running application unit tests'
+                sh 'python3 -m unittest test_app.py -v'
             }
         }
 
